@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Lista de Compras</title>
+  <!-- importa o css do bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- importa o js do bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+  <!-- importa o css do fontawesome (biblioteca de icone) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- importa o css do animate (biblioteca de animacao) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.2.1/dist/sweetalert2.all.min.js"></script>
+  <script src="js/app.js" defer></script>
+
+</head>
+<body>
+
+  <header style="margin-bottom: 5rem;">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">App Lista de Compras</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <hr class="featurette-divider">
+
+      <div class="row featurette" id="boxCadastro">
+        <h2>Cadastrar produto</h2>
+        <input type="hidden" id="idProduto" name="idProduto" value="" />
+        <div class="col-3">
+          <div class="input-group">
+            <input type="text" class="form-control" id="produto" placeholder="Produto" required>
+          </div>
+        </div>
+        <div class="col-2">
+            <div class="input-group">
+              <input type="number" class="form-control" id="valor" placeholder="Valor (R$)" min="0" required>
+            </div>
+        </div>
+        <div class="col-2">
+          <div class="input-group">
+            <input type="number" class="form-control" id="qtde" placeholder="Quantidade" min="1" required>
+          </div>
+        </div>
+        <div class="col-2">
+          <button class="w-100 btn btn-success" id="novo" type="button"><i class="fas fa-plus-square"></i> Novo Produto</button>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette" id="boxPesquisa">
+        <div class="col-4">
+          <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-search"></i></span>
+            <input type="search" class="form-control" id="pesquisar" placeholder="Pesquisar produto" required>  
+          </div>
+        </div>
+        <div class="col-2">
+            <button class="w-100 btn btn-danger" id="limparLista" type="button">Limpar lista</button>
+          </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <table class="table table-hover table-bordered ">
+          <thead>
+            <tr>
+              <th scope="col">ITEM</th>
+              <th scope="col">PRODUTO</th>
+              <th scope="col">VALOR (R$)</th>
+              <th scope="col">QUANTIDADE</th>
+              <th scope="col">VALOR TOTAL (R$)</th>
+            </tr>
+          </thead>
+          <tbody id="listaProdutos">
+            <tr>
+              <td colspan="5" class="text-center">NENHUM REGISTRO ENCONTRADO</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <footer class="container">
+      <br>
+      <p class="text-center">&copy; 2021 &middot; RAFAEL DIAS DE SOUZA &middot; Todos os direitos reservados</p>
+    </footer>
+
+  </main>
+</body>
+
+</html>
